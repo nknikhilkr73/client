@@ -3,7 +3,7 @@ import NoteContext from "./noteContext"
 
 
 const NoteState = (props) => {
-    const host = "http://localhost:4000"
+    const host = "https://profileforgeserver.onrender.com"
 
     const [notes, setNotes] = useState([])
 

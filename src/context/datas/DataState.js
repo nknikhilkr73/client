@@ -3,7 +3,7 @@ import DataContext from "./dataContext";
 
 const DataState = (props) => {
 
-    const host = "http://localhost:4000"
+    const host = "https://profileforgeserver.onrender.com"
 
     const [data, setData] = useState([])
 

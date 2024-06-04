@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 const QuizResult = () => {
-    const host = "http://localhost:4000"
+    const host = "https://profileforgeserver.onrender.com"
 
     const [allMarks, setAllMarks] = useState([])
 

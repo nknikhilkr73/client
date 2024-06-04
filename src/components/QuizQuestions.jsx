@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const QuizQuestions = ({ onSubmit }) => {
 
-    const host = "http://localhost:4000"
+    const host = "https://profileforgeserver.onrender.com"
 
     const [questions, setQuestions] = useState([]);
     const [selectedAnswers, setSelectedAnswers] = useState([]);

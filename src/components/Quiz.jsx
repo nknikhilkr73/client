@@ -7,7 +7,7 @@ import QuizQuestions from './QuizQuestions';
 
 const Quiz = () => {
 
-    const host = "http://localhost:4000"
+    const host = "https://profileforgeserver.onrender.com"
 
     const [quizIsLive, setQuizIsLive] = useState(false)
     const [endTime, setEndTime] = useState(null)

@@ -14,7 +14,7 @@ const Login = (props) => {
     const [truth, setTruth] = useState(true)
 
     const navigate = useNavigate()
-    const host = "http://localhost:4000"
+    const host = "https://profileforgeserver.onrender.com"
 
     const handleSubmit = async (e) => {
         e.preventDefault()

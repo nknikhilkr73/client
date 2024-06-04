@@ -8,7 +8,7 @@ import QuizResult from './QuizResult';
 
 const Admin = () => {
 
-    const hostUrl= 'http://localhost:4000'
+    const hostUrl= 'https://profileforgeserver.onrender.com'
 
     const [quizActive, setQuizActive] = useState(false);
     const [quizEndTime, setQuizEndTime] = useState(null);

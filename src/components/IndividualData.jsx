@@ -8,7 +8,7 @@ import IndividualDataItem from './IndividualDataItem'
 import ProfileImage from './ProfileImage'
 
 const IndividualData = (props) => {
-    const host = "http://localhost:4000"
+    const host = "https://profileforgeserver.onrender.com"
     const context = useContext(DataContext)
 
     const { data, getAllData, editData } = context

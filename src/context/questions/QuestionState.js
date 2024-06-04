@@ -3,7 +3,7 @@ import QuestionContext from "./questionContext"
 
 
 const QuestionState = (props) => {
-    const host = "http://localhost:4000"
+    const host = "https://profileforgeserver.onrender.com"
 
     const [questions, setQuestions] = useState([])
 
