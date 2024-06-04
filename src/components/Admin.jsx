@@ -42,7 +42,15 @@ const Admin = () => {
         const timelimitfunction = async () => {
             const response = await axios.get(`${hostUrl}/quiztimelimit/getquiztimelimit`)
             // console.log(response.data[0].timelimit);
-            setGettingtimelimitfromsever(response.data[0].timelimit)
+            if(response.data[0]){
+                setGettingtimelimitfromsever(response.data[0].timelimit)
+              
+            }
+            else{
+
+                setGettingtimelimitfromsever(0)
+            }
+            // setGettingtimelimitfromsever(response.data[0].timelimit)
         }
 
         timelimitfunction()
@@ -150,11 +158,21 @@ const Admin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent default form submission behavior
 
-        await axios.put(`${hostUrl}/quiztimelimit/timelimit/update`, {
+        const response = await axios.get(`${hostUrl}/quiztimelimit/getquiztimelimit`)
+        if(response.data[0]){
+            await axios.put(`${hostUrl}/quiztimelimit/timelimit/update`, {
+                timelimit: timeLimit
+            })
+            setTimeLimit(0); // Reset time limit to 0
+        }
+
+       else{
+        await axios.post(`${hostUrl}/quiztimelimit/timelimit/save`, {
             timelimit: timeLimit
         })
+       }
 
-        setTimeLimit(0); // Reset time limit to 0
+       
     };
 
 
