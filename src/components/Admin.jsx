@@ -58,15 +58,20 @@ const Admin = () => {
 
     const startQuiz = async () => {
         try {
-            const response = await axios.post(`${hostUrl}/api/quiz/start-quiz`)
-            console.log(response)
+             await axios.post(`${hostUrl}/api/quiz/start-quiz`)
+            // console.log(response.data.data.quizStarted , response.data.data.quizEndTime )
+        //    await axios.post(`${hostUrl}/quiz/time/save`,{
+        //         quizStarted: response.data.data.quizStarted
+        //     })
             const getQuizDetails = await axios.get(`${hostUrl}/quiz/quiztime`)
-            console.log("hii", getQuizDetails.data[0].quizStarted, getQuizDetails.data[0].quizEndTime);
+            // console.log(getQuizDetails);
+            // console.log("hii", getQuizDetails.data[0].quizStarted, getQuizDetails.data[0].quizEndTime);
 
 
             const endtimeFromDatabase = await axios.get(`${hostUrl}/quiztimelimit/getquiztimelimit`)
+            // console.log(endtimeFromDatabase);
 
-            if (getQuizDetails.data[0].quizStarted !== "true") {
+            if (getQuizDetails.data[0].quizStarted !== "true" || getQuizDetails.data === undefined) {
                 // console.log("Not sarted");
                 const startTime = new Date();
                 // const endTime = new Date(startTime.getTime() + 30 * 60000).toISOString();
@@ -88,7 +93,7 @@ const Admin = () => {
                     description: 'Email notifications sent to students.',
                 });
                 const timeRemaining = new Date(endTime).getTime() - startTime.getTime();
-                console.log(timeRemaining);
+                // console.log(timeRemaining);
                 setTimeout(endQuiz, timeRemaining);
                 setQuizStarted(false)
             }

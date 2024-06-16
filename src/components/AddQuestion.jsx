@@ -17,6 +17,10 @@ const AddQuestion = () => {
         try {
 
             const host = "https://profileforgeserver.onrender.com"
+
+            // const host = "http://localhost:4000"
+
+
             // console.log(timelimit);
             await axios.post(`${host}/question/addQuestion`, {
                 question,

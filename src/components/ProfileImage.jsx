@@ -4,7 +4,7 @@ import Profile from "../Video/randomRendering.png";
 
 const ProfileImage = () => {
 
-    const host = "http://localhost:4000"
+    const host = "https://profileforgeserver.onrender.com"
     const location = useLocation()
     const [source, setSource] = useState(Profile)
 
